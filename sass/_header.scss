@@ -1,0 +1,88 @@
+.header {
+  height: 98vh;
+  background-image: linear-gradient(to right bottom, rgba(75, 124, 148, 0.75), rgba(36, 81, 114, 0.8)), url(../img/img1.jpg);
+  background-size: cover;
+  background-position: left bottom; // obrazek będzie się trzymał lewego dołu
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); //Ucięcie części headera
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+
+  &__logo-img {
+    height: 35px;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden; //usuwa shake effect po animacji
+    margin-bottom: 60px;
+
+    &--main {
+      display: block; // dzięki temu napisy ułożą się pod sobą
+      font-size: 60px;
+      letter-spacing: 35px;
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      // animation-iteration-count: 3;
+      // animation-delay: 1s;
+    }
+
+    &--sub {
+      display: block; // dzięki temu napisy ułożą się pod sobą
+      font-size: 20px;
+      letter-spacing: 17px;
+      animation: moveInRight 1s ease-in-out;
+    }
+  }
+
+  &__btn {
+    background-color: #fff;
+    color: #878;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
