@@ -1,11 +1,8 @@
-$primary-color: #4B7C94;
-$primary-color-dark: #245172;
-
 .header {
   height: 98vh;
   background-image: linear-gradient(to right bottom,
-      rgba(75, 124, 148, 0.75),
-      rgba(36, 81, 114, 0.8)),
+      rgba($primary-color, 0.75),
+      rgba($primary-color-dark, 0.8)),
     url(../img/img1.jpg);
   background-size: cover;
   background-position: left bottom; // obrazek będzie się trzymał lewego dołu
@@ -31,15 +28,16 @@ $primary-color-dark: #245172;
   }
 
   &__title {
-    color: #fff;
+    color: $white-color;
     text-transform: uppercase;
     backface-visibility: hidden; //usuwa shake effect po animacji
     margin-bottom: 6rem;
 
     &--main {
       display: block; // dzięki temu napisy ułożą się pod sobą
-      font-size: 6rem;
-      letter-spacing: 3.5rem;
+      margin-bottom: 1rem;
+      font-size: 4rem;
+      letter-spacing: 2.5rem;
       animation-name: moveInLeft;
       animation-duration: 1s;
       animation-timing-function: ease-out;
@@ -56,13 +54,13 @@ $primary-color-dark: #245172;
   }
 
   &__btn {
-    background-color: #fff;
+    background-color: $white-color;
     color: #878;
     animation: moveInBottom 0.5s ease-in-out 0.75s;
     animation-fill-mode: backwards;
 
     &::after {
-      background-color: #fff;
+      background-color: $white-color;
       position: absolute;
       top: 0;
       left: 0;
@@ -74,45 +72,5 @@ $primary-color-dark: #245172;
       transform: scaleX(1.2) scaleY(1.5);
       opacity: 0;
     }
-  }
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translateX(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
   }
 }
