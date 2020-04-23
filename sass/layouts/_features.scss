@@ -1,0 +1,25 @@
+.features {
+  background-image: linear-gradient(to right bottom,
+      rgba($primary-color, 0.75),
+      rgba($primary-color-dark, 0.8)),
+    url(../img/img2.jpg);
+  background-size: cover;
+  background-position: left bottom;
+  padding: 20rem 2rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  transform: skewY(-7deg); // Ucina sekcje (przekreca)
+  margin-top: -12rem;
+
+  &>* {
+    transform: skewY(7deg); // Odkreca sekcje
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $grid-gap;
+    max-width: $grid-width;
+  }
+}
