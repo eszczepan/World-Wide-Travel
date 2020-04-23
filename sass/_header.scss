@@ -1,6 +1,12 @@
+$primary-color: #4B7C94;
+$primary-color-dark: #245172;
+
 .header {
   height: 98vh;
-  background-image: linear-gradient(to right bottom, rgba(75, 124, 148, 0.75), rgba(36, 81, 114, 0.8)), url(../img/img1.jpg);
+  background-image: linear-gradient(to right bottom,
+      rgba(75, 124, 148, 0.75),
+      rgba(36, 81, 114, 0.8)),
+    url(../img/img1.jpg);
   background-size: cover;
   background-position: left bottom; // obrazek będzie się trzymał lewego dołu
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); //Ucięcie części headera
@@ -8,8 +14,8 @@
 
   &__logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
   }
 
   &__logo-img {
@@ -28,12 +34,12 @@
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden; //usuwa shake effect po animacji
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 
     &--main {
       display: block; // dzięki temu napisy ułożą się pod sobą
-      font-size: 60px;
-      letter-spacing: 35px;
+      font-size: 6rem;
+      letter-spacing: 3.5rem;
       animation-name: moveInLeft;
       animation-duration: 1s;
       animation-timing-function: ease-out;
@@ -43,8 +49,8 @@
 
     &--sub {
       display: block; // dzięki temu napisy ułożą się pod sobą
-      font-size: 20px;
-      letter-spacing: 17px;
+      font-size: 2rem;
+      letter-spacing: 1.7rem;
       animation: moveInRight 1s ease-in-out;
     }
   }
@@ -52,17 +58,29 @@
   &__btn {
     background-color: #fff;
     color: #878;
+    animation: moveInBottom 0.5s ease-in-out 0.75s;
+    animation-fill-mode: backwards;
+
+    &::after {
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.5s;
+    }
+
+    &:hover::after {
+      transform: scaleX(1.2) scaleY(1.5);
+      opacity: 0;
+    }
   }
 }
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  80% {
-    transform: translateX(10px);
+    transform: translateX(-10rem);
   }
 
   100% {
@@ -74,11 +92,23 @@
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
   }
 
   100% {
