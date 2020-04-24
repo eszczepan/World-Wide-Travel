@@ -28,4 +28,25 @@
     width: 100%;
     border-radius: 10rem;
   }
+
+  &--blue {
+    background-color: $primary-color;
+    color: $white-color;
+    animation: moveInBottom .5s ease-in-out .5s;
+    animation-fill-mode: backwards;
+
+    &::after {
+      background-color: $primary-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.5s;
+    }
+
+    &:hover::after {
+      transform: scaleX(1.2) scaleY(1.5);
+      opacity: 0;
+    }
+  }
 }
