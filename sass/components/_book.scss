@@ -1,0 +1,15 @@
+.book {
+  background-image: linear-gradient(105deg,
+      rgba($white-color, .9)0%,
+      $white-color 50%,
+      transparent 50%),
+    url(../img/booking.jpg);
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($black-color, .2);
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

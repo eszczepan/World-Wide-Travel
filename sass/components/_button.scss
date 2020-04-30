@@ -1,5 +1,6 @@
 .btn {
 
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -10,6 +11,10 @@
     transition: all .2s;
     position: relative;
     font-size: $default-font-size;
+
+    //For button
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -17,8 +22,11 @@
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba($black-color, .2);
   }
 
   &::after {

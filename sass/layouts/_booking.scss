@@ -1,0 +1,17 @@
+.booking {
+  padding: 15rem 2rem;
+  background-image: linear-gradient(to right bottom, $primary-color, $primary-color-dark);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  // margin-top: -12rem;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    // gap: $grid-gap;
+    width: 100%;
+    max-width: $grid-width;
+  }
+
+}
