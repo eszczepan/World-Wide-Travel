@@ -1,0 +1,17 @@
+.stories {
+  padding: 15rem 2rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: -12rem;
+  position: relative;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $grid-gap;
+    width: 90%;
+    max-width: $grid-width;
+  }
+
+}
